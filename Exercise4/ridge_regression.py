@@ -23,6 +23,6 @@ def ridge_regression(y, tx, lambda_):
     >>> ridge_regression(np.array([0.1,0.2]), np.array([[2.3, 3.2], [1., 0.1]]), 1)
     array([0.03947092, 0.00319628])
     """
-    w = np.linalg.solve(len(y) * lambda_ * np.identity(tx.shape[1]) + tx.T@tx , tx.T@y)  # Computing w by way of the normal equations
+    w = np.linalg.solve(2*len(y) * lambda_ * np.identity(tx.shape[1]) + tx.T@tx , tx.T@y)  # Computing w by way of the normal equations
     #w = np.linalg.inv(len(y)*lambda_ * np.identity(tx.shape[1]) + tx.T @ tx) @ tx.T @ y
     return w
